@@ -1,15 +1,40 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/global/app-sidebar"
-import { LayoutDashboard } from "lucide-react"
-import { Outlet } from "react-router-dom"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/global/app-sidebar";
+import {
+  Boxes,
+  LayoutDashboard,
+  Package,
+  Receipt,
+  SquareUserRound,
+  Users,
+} from "lucide-react";
+import { Outlet } from "react-router-dom";
 
 const items = [
-    {
-        title: 'لوحة التحكم',
-        to: 'dashboard',
-        icon: LayoutDashboard
-    }
-]
+  {
+    title: "لوحة التحكم",
+    to: "dashboard",
+    icon: LayoutDashboard,
+  },
+  {
+    title: "المستخدمين",
+    to: "staff",
+    icon: SquareUserRound,
+  },
+  {
+    title: "المخزون",
+    to: "inventory",
+    icon: Package,
+    subLink: true,
+    subLinks: [
+      {
+        title: "المنتجات",
+        to: "products",
+        // icon: Receipt,
+      },
+    ],
+  },
+];
 
 export default function OrganizationAdminLayout() {
   return (
@@ -20,5 +45,5 @@ export default function OrganizationAdminLayout() {
         <Outlet />
       </main>
     </SidebarProvider>
-  )
+  );
 }

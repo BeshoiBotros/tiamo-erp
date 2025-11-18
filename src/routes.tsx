@@ -9,6 +9,10 @@ export const TiamoRoutes = () =>{
                 <Route path='/login' element={<Login />} />
                 <Route path='/admin' element={<OrganizationAdminLayout />}>
                     <Route path='dashboard' element={(<p>Dashboard</p>)} />
+                    <Route path='staff' element={(<p>Users</p>)} />
+                    <Route path='parties' element={(<p>suppliers and customers</p>)} />
+                    <Route path='invoices' element={(<p>invoices</p>)} />
+                    <Route path='products' element={(<p>products</p>)} />
                 </Route>
             </Routes>
         </Router>
