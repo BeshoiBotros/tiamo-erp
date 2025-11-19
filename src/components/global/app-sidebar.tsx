@@ -41,10 +41,10 @@ export function AppSidebar({ items, title }: { items: Item[]; title: string }) {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>
-            <span className="font-black text-foreground text-lg">{title}</span>
+            <span className="font-black text-foreground text-2xl mt-2">{title}</span>
           </SidebarGroupLabel>
 
-          <SidebarGroupContent className="pt-3">
+          <SidebarGroupContent className="pt-5">
             <SidebarMenu>
               {items.map((item) => {
                 const hasSubLinks = !!item.subLinks?.length;
@@ -68,7 +68,7 @@ export function AppSidebar({ items, title }: { items: Item[]; title: string }) {
                             tooltip={item.title}
                             className={cn(
                               "w-full justify-between",
-                              isGroupActive && "font-bold text-foreground"
+                              isGroupActive && "font-bold text-white"
                             )}
                           >
                             <div className="flex items-center gap-3">
@@ -90,7 +90,7 @@ export function AppSidebar({ items, title }: { items: Item[]; title: string }) {
                                     title={subItem.title}
                                   >
                                     {({ isActive }) => (
-                                      <SidebarMenuButton className={cn(isActive && "font-bold bg-primary")}>
+                                      <SidebarMenuButton className={cn(isActive && "font-bold bg-primary text-white")}>
                                         {subItem.icon && (
                                           <subItem.icon className="size-4" />
                                         )}
@@ -115,7 +115,7 @@ export function AppSidebar({ items, title }: { items: Item[]; title: string }) {
                       <SidebarMenuButton asChild>
                         <NavLink to={item.to} end title={item.title}>
                           {({ isActive }) => (
-                            <SidebarMenuButton className={cn(isActive && "font-bold bg-primary")}>
+                            <SidebarMenuButton className={cn(isActive && "font-bold bg-primary text-white")}>
                               {item.icon && (<item.icon className="size-5" />)}
                               <span >
                                 {item.title}

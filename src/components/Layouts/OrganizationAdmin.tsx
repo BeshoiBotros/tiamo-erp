@@ -1,19 +1,19 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/global/app-sidebar";
 import {
-  Boxes,
+  Activity,
+  BadgeDollarSign,
+  ClipboardPlus,
   LayoutDashboard,
   Package,
-  Receipt,
   SquareUserRound,
-  Users,
 } from "lucide-react";
 import { Outlet } from "react-router-dom";
 
 const items = [
   {
     title: "لوحة التحكم",
-    to: "dashboard",
+    to: "",
     icon: LayoutDashboard,
   },
   {
@@ -30,9 +30,46 @@ const items = [
       {
         title: "المنتجات",
         to: "products",
-        // icon: Receipt,
+      },
+      {
+        title: "طلبات التوريد",
+        to: "purchases",
+      },
+      {
+        title: "المودرين",
+        to: "suppliers",
+      },
+      {
+        title: "تعديل يدوي",
+        to: "man-update",
       },
     ],
+  },
+  {
+    title: "المبيعات",
+    to: "sales",
+    icon: BadgeDollarSign,
+    subLink: true,
+    subLinks: [
+      {
+        title: "العملاء",
+        to: "customers",
+      },
+      {
+        title: "الفواتير",
+        to: "invoices",
+      },
+    ],
+  },
+  {
+    title: "التقارير",
+    icon: ClipboardPlus,
+    to: "reports",
+  },
+  {
+    title: "سجل النشاط",
+    icon: Activity,
+    to: "activity",
   },
 ];
 
