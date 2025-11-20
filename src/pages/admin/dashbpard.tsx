@@ -1,7 +1,43 @@
+import LatestProducts from "@/components/Admin/latest-products/page";
 import { MonthlySalesCard } from "@/components/Admin/MonthlySales";
+import { TopTen } from "@/components/Admin/TopTenProductsSell";
 import Stat from "@/components/global/stat";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Package, TrendingUp, TriangleAlert, Users } from "lucide-react";
 import type React from "react";
+
+const products = [
+  {
+    sku: "PRO-0001",
+    name: "Tiamo Nail Polish 18ml",
+    currentQuantity: 500,
+    sellingPrice: 20,
+  },
+  {
+    sku: "PRO-0002",
+    name: "Tiamo Nail Polish 16ml",
+    currentQuantity: 500,
+    sellingPrice: 20,
+  },
+  {
+    sku: "PRO-0003",
+    name: "Tiamo Nail Polish 14ml",
+    currentQuantity: 500,
+    sellingPrice: 20,
+  },
+  {
+    sku: "PRO-0003",
+    name: "Tiamo Nail Polish 10ml",
+    currentQuantity: 500,
+    sellingPrice: 20,
+  },
+  {
+    sku: "PRO-0001",
+    name: "Tiamo Nail Polish 9ml",
+    currentQuantity: 500,
+    sellingPrice: 20,
+  },
+];
 
 const AdminDashboard: React.FC = () => {
   return (
@@ -55,7 +91,18 @@ const AdminDashboard: React.FC = () => {
 
       <div className="flex flex-col md:flex-row p-6 gap-3">
         <MonthlySalesCard />
-        <MonthlySalesCard />
+        <TopTen />
+      </div>
+
+      <div className="mx-6 flex flex-col">
+        <Card className="mb-3">
+          <CardHeader>
+            <h2 className="text-2xl"> المنتجات </h2>
+          </CardHeader>
+          <CardContent>
+            <LatestProducts products={products} />
+          </CardContent>
+        </Card>
       </div>
     </>
   );

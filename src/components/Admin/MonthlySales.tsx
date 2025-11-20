@@ -4,7 +4,6 @@ import { CartesianGrid, Line, LineChart, XAxis } from "recharts"
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -38,7 +37,6 @@ export function MonthlySalesCard() {
     <Card className="w-full">
       <CardHeader>
         <CardTitle>المبيعات الشهرية</CardTitle>
-        <CardDescription>يناير - يونيو 2024</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>

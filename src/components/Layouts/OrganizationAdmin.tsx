@@ -78,7 +78,7 @@ export default function OrganizationAdminLayout() {
     <SidebarProvider dir="rtl">
       <AppSidebar items={items} title="ادمن المنظومة" />
       <main className="w-screen h-screen" dir="rtl">
-        <SidebarTrigger />
+        <SidebarTrigger className="m-3" />
         <Outlet />
       </main>
     </SidebarProvider>
